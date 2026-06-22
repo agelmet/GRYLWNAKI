@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ναταλία Άννα Γρυλωνάκη — Ψυχολόγος · Ψυχοθεραπεύτρια</title>
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/IMG_4116.PNG">
 <meta name="description" content="Ναταλία Άννα Γρυλωνάκη — Ψυχολόγος, Ψυχοθεραπεύτρια Συστημικής–Υπαρξιακής προσέγγισης. Ατομική ψυχοθεραπεία, θεραπεία ζεύγους, οικογενειακή θεραπεία, ψυχοθεραπεία εφήβου. Κολωνάκι, Αθήνα.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,9 +101,9 @@ header.scrolled .brand img{height:44px}
 /* ===== Hero ===== */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);filter:saturate(.78) brightness(.96)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);filter:saturate(.9) brightness(.98)}
 .hero-bg::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(105deg,rgba(250,246,239,.94) 0%,rgba(250,246,239,.78) 38%,rgba(231,221,207,.42) 68%,rgba(143,168,136,.22) 100%)}
+  linear-gradient(105deg,rgba(250,246,239,.92) 0%,rgba(250,246,239,.74) 36%,rgba(231,221,207,.4) 66%,rgba(143,168,136,.2) 100%)}
 .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:120px 32px 60px;width:100%}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;color:var(--clay-deep);font-weight:600;margin-bottom:26px}
 .hero-eyebrow::before{content:"";width:38px;height:1px;background:var(--clay)}
@@ -146,22 +147,24 @@ section{position:relative}
 .intro-copy p{font-size:1.08rem;color:var(--ink-soft);margin-bottom:22px}
 .intro-copy .lead-line{font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1.5;color:var(--ink);margin-bottom:28px}
 .intro-visual{position:relative}
-.intro-visual .frame{position:relative;border-radius:200px 200px 18px 18px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:3/4}
-.intro-visual .frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
-.intro-visual .frame:hover img{transform:scale(1.06)}
-.intro-visual .badge{position:absolute;bottom:-26px;left:-26px;background:var(--cream);border-radius:50%;width:130px;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow);border:1px solid var(--line)}
+.intro-visual .frame{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:var(--sand)}
+.intro-visual .frame img{width:100%;height:auto;display:block;transition:transform 1.2s ease}
+.intro-visual .frame:hover img{transform:scale(1.04)}
+.intro-visual .badge{position:absolute;bottom:-26px;left:-26px;background:var(--cream);border-radius:50%;width:130px;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow);border:1px solid var(--line);z-index:2}
 .intro-visual .badge b{font-family:var(--serif);font-size:1.8rem;color:var(--clay);line-height:1}
 .intro-visual .badge span{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px;max-width:80px}
 
 /* ===== About ===== */
 .about{background:var(--cream)}
-.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:70px;align-items:center}
 .about-photo{position:relative}
-.about-photo .stack{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.about-photo .stack img{border-radius:16px;box-shadow:var(--shadow);cursor:zoom-in;transition:transform .6s ease,box-shadow .6s ease}
-.about-photo .stack img:nth-child(1){grid-column:1 / -1;aspect-ratio:4/3;object-fit:cover}
-.about-photo .stack img:nth-child(2),.about-photo .stack img:nth-child(3){aspect-ratio:3/4;object-fit:cover}
-.about-photo .stack img:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 40px 80px -30px rgba(90,64,46,.5)}
+.about-photo .portrait{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:var(--sand);position:relative}
+.about-photo .portrait img{width:100%;height:auto;display:block;cursor:zoom-in;transition:transform 1s ease}
+.about-photo .portrait:hover img{transform:scale(1.04)}
+.about-photo .portrait::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.4);border-radius:24px;pointer-events:none}
+.about-photo .leafdec{position:absolute;width:80px;color:var(--sage);opacity:.5;z-index:2}
+.about-photo .leafdec.t{top:-26px;right:24px}
+.about-photo .leafdec.b{bottom:-22px;left:-22px;width:56px;color:var(--clay-soft)}
 .about-copy h3{font-family:var(--serif);font-weight:400;font-size:2rem;margin-bottom:8px}
 .about-credential{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);font-weight:600;margin-bottom:24px;padding:6px 14px;background:rgba(176,122,94,.1);border-radius:30px}
 .about-copy p{color:var(--ink-soft);margin-bottom:18px;font-size:1.02rem}
@@ -169,22 +172,39 @@ section{position:relative}
 .about-copy .approach p{margin:0;font-style:italic;font-family:var(--serif);font-size:1.2rem;color:var(--ink)}
 
 /* ===== Services ===== */
-.services{background:linear-gradient(180deg,var(--sand-light),var(--cream))}
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-.svc{background:#fff;border:1px solid var(--line);border-radius:24px;padding:42px 38px;position:relative;overflow:hidden;transition:all .55s cubic-bezier(.22,1,.36,1)}
-.svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--clay),var(--sage));transform:scaleX(0);transform-origin:left;transition:transform .6s ease}
-.svc:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
-.svc:hover::before{transform:scaleX(1)}
-.svc-icon{width:58px;height:58px;border-radius:16px;background:var(--sand-light);display:flex;align-items:center;justify-content:center;margin-bottom:24px;color:var(--clay);transition:all .5s ease}
-.svc:hover .svc-icon{background:var(--clay);color:#fff;transform:rotate(-6deg)}
-.svc-icon svg{width:28px;height:28px}
-.svc h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;margin-bottom:14px}
-.svc p{color:var(--ink-soft);font-size:.98rem;line-height:1.7}
-.svc .more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--clay);cursor:pointer;transition:gap .3s}
-.svc .more:hover{gap:14px}
+.services{background:linear-gradient(180deg,var(--cream),var(--sand-light) 60%,var(--cream));position:relative;overflow:hidden}
+.services::before{content:"";position:absolute;top:-160px;right:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(143,168,136,.16),transparent 70%);pointer-events:none}
+.services::after{content:"";position:absolute;bottom:-180px;left:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(176,122,94,.12),transparent 70%);pointer-events:none}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;position:relative;z-index:1}
+.svc{background:linear-gradient(160deg,#fff,#fdfaf5);border:1px solid var(--line);border-radius:26px;padding:46px 44px;position:relative;overflow:hidden;transition:transform .6s cubic-bezier(.22,1,.36,1),box-shadow .6s,border-color .6s}
+.svc::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,var(--clay) -20%,var(--sage-deep) 120%);opacity:0;transition:opacity .6s ease;z-index:0}
+.svc:hover{transform:translateY(-10px);box-shadow:0 44px 90px -34px rgba(90,64,46,.55);border-color:transparent}
+.svc:hover::before{opacity:1}
+.svc>*{position:relative;z-index:1;transition:color .55s ease}
+.svc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.svc-num{font-family:var(--serif);font-style:italic;font-size:1.05rem;letter-spacing:.1em;color:var(--clay);transition:color .55s ease}
+.svc:hover .svc-num{color:rgba(255,255,255,.7)}
+/* line-art monogram badge */
+.svc-badge{width:66px;height:66px;position:relative;display:flex;align-items:center;justify-content:center}
+.svc-badge .ring{position:absolute;inset:0;border-radius:50%;border:1.4px solid var(--clay-soft);transition:all .55s ease}
+.svc-badge .ring2{position:absolute;inset:6px;border-radius:50%;border:1px solid rgba(143,168,136,.5);transition:all .7s ease}
+.svc:hover .svc-badge .ring{border-color:rgba(255,255,255,.55);transform:rotate(45deg)}
+.svc:hover .svc-badge .ring2{border-color:rgba(255,255,255,.35);transform:rotate(-30deg)}
+.svc-badge svg{width:30px;height:30px;stroke:var(--clay-deep);transition:stroke .55s ease}
+.svc:hover .svc-badge svg{stroke:#fff}
+.svc h3{font-family:var(--serif);font-weight:500;font-size:1.7rem;margin-bottom:14px;color:var(--ink)}
+.svc:hover h3{color:#fff}
+.svc p{color:var(--ink-soft);font-size:1rem;line-height:1.72}
+.svc:hover p{color:rgba(255,255,255,.9)}
+.svc .more{display:inline-flex;align-items:center;gap:9px;margin-top:22px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--clay);cursor:pointer;transition:gap .3s,color .55s}
+.svc:hover .more{color:#fff}
+.svc .more:hover{gap:15px}
+.svc .more svg{width:15px;height:15px;transition:transform .4s}
+.svc .more.open svg{transform:rotate(90deg)}
 .svc-extra{max-height:0;overflow:hidden;transition:max-height .7s ease,margin-top .5s,opacity .6s;opacity:0}
-.svc-extra.open{max-height:600px;margin-top:16px;opacity:1}
-.svc-extra p{font-size:.94rem}
+.svc-extra.open{max-height:700px;margin-top:18px;opacity:1}
+.svc-extra p{font-size:.95rem;border-top:1px solid var(--line);padding-top:18px}
+.svc:hover .svc-extra p{border-color:rgba(255,255,255,.25)}
 
 /* ===== Space / gallery ===== */
 .space{background:var(--ink);color:var(--sand);overflow:hidden}
@@ -193,17 +213,15 @@ section{position:relative}
 .space .sec-head h2{color:var(--cream)}
 .space .sec-head h2 em{color:var(--clay-soft)}
 .space-lead{max-width:56ch;color:rgba(231,221,207,.7);margin-top:-30px;margin-bottom:50px}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px}
-.gallery figure{overflow:hidden;border-radius:14px;cursor:zoom-in;position:relative}
-.gallery figure img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.22,1,.36,1);filter:saturate(.9)}
-.gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(36,30,26,.5));opacity:0;transition:opacity .5s}
-.gallery figure:hover img{transform:scale(1.1)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gallery figure{overflow:hidden;border-radius:16px;cursor:zoom-in;position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);line-height:0;font-size:0}
+.gallery figure img{width:100%;height:auto;display:block;object-fit:contain;transition:transform .9s cubic-bezier(.22,1,.36,1);filter:saturate(.94)}
+.gallery figure::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(36,30,26,.45));opacity:0;transition:opacity .5s;border-radius:16px}
+.gallery figure:hover img{transform:scale(1.05)}
 .gallery figure:hover::after{opacity:1}
-.gallery figure .zoom{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.7);transition:all .45s ease}
+.gallery figure .zoom{position:absolute;top:14px;right:14px;width:38px;height:38px;min-width:38px;min-height:38px;max-width:38px;max-height:38px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.7);transition:all .45s ease;z-index:2}
 .gallery figure:hover .zoom{opacity:1;transform:scale(1)}
-.gallery figure .zoom svg{width:16px;height:16px;stroke:#fff}
-.g-tall{grid-row:span 2}
-.g-wide{grid-column:span 2}
+.gallery figure .zoom svg{width:16px;height:16px;min-width:16px;min-height:16px;max-width:16px;max-height:16px;flex:none;stroke:#fff}
 
 /* ===== Reviews ===== */
 .reviews{background:var(--sand-light)}
@@ -288,14 +306,19 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
 @keyframes heroZoom{to{transform:scale(1)}}
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
+/* gallery sub-grids for symmetric, uncropped layout */
+.gallery-port{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gallery-land{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+
 /* ===== Responsive ===== */
 @media(max-width:980px){
   .intro-grid,.about-grid{grid-template-columns:1fr;gap:48px}
-  .about-photo{order:-1}
+  .about-photo{order:-1;max-width:460px;margin:0 auto}
   .svc-grid{grid-template-columns:1fr}
-  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+  .gallery-port{grid-template-columns:repeat(2,1fr)}
+  .gallery-land{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
-  .g-wide{grid-column:span 1}
+  .intro-visual{max-width:460px;margin:0 auto}
 }
 @media(max-width:760px){
   .nav-links,.cta-nav,.lang{display:none}
@@ -307,6 +330,7 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   .rev-card{width:300px}
   .foot-grid{flex-direction:column}
   .leaf.l3{display:none}
+  .svc{padding:38px 30px}
 }
 </style>
 </head>
@@ -377,7 +401,7 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
 <!-- Hero -->
 <section class="hero hero-anim">
   <div class="hero-bg">
-    <img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-106.jpg" alt="">
+    <img src="https://github.com/agelmet/GRYLWNAKI/blob/main/Gemini_Generated_Image_t5eslit5eslit5es.png?raw=true" alt="">
   </div>
   <svg class="leaf l1" viewBox="0 0 24 24" fill="none"><path d="M12 2C7 7 4 11 4 16a8 8 0 0016 0c0-5-3-9-8-14z" fill="currentColor" opacity=".6"/><path d="M12 6v14" stroke="#fff" stroke-width=".6"/></svg>
   <svg class="leaf l2" viewBox="0 0 24 24" fill="none"><path d="M12 2C7 7 4 11 4 16a8 8 0 0016 0c0-5-3-9-8-14z" fill="currentColor" opacity=".6"/></svg>
@@ -437,14 +461,122 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   </div>
 </section>
 
+<!-- Services (now before About) -->
+<section class="services sec-pad" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><span data-el>Υπηρεσίες</span><span data-en>Services</span></span>
+      <h2>
+        <span data-el>Φροντίδα που <em>σέβεται την πορεία σας</em></span>
+        <span data-en>Care that <em>honours your own path</em></span>
+      </h2>
+    </div>
+    <div class="svc-grid">
+
+      <!-- Atomiki -->
+      <div class="svc reveal d1">
+        <div class="svc-top">
+          <div class="svc-badge">
+            <span class="ring"></span><span class="ring2"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.5" r="3.2"/><path d="M6 20c0-3.6 2.7-5.6 6-5.6s6 2 6 5.6"/></svg>
+          </div>
+          <span class="svc-num">01</span>
+        </div>
+        <h3><span data-el>Ατομική Ψυχοθεραπεία</span><span data-en>Individual Psychotherapy</span></h3>
+        <p>
+          <span data-el>Ένας χώρος συνάντησης με τον εαυτό, για ενήλικες που διαχειρίζονται άγχος, φόβο, αλλαγές ή ερωτήματα ζωής. Εδώ η δυσκολία δεν είναι «πρόβλημα προς διόρθωση», αλλά μήνυμα που αξίζει να ακουστεί.</span>
+          <span data-en>A space of meeting yourself — for adults navigating anxiety, fear, change or life’s deeper questions. Here, difficulty is not a “problem to be fixed”, but a message worth hearing.</span>
+        </p>
+        <div class="more" onclick="toggleSvc(this)"><span data-el>Περισσότερα</span><span data-en>Read more</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="svc-extra">
+          <p>
+            <span data-el>Μέσα από τη θεραπευτική σχέση φωτίζονται μοτίβα, επιλογές, ανάγκες και επιθυμίες. Στόχος είναι η βαθύτερη κατανόηση του εαυτού, η ενίσχυση της ελεύθερης επιλογής και η ανάληψη της προσωπικής ευθύνης για τη δημιουργία ενός τρόπου ζωής που έχει αληθινό νόημα. Η διεργασία δεν αποσκοπεί σε μια ζωή χωρίς αγωνίες, αλλά στο να αναδειχθούν οι εσωτερικοί μας πόροι, ώστε να αντιμετωπίζουμε τις προκλήσεις με πληρότητα και επίγνωση.</span>
+            <span data-en>Through the therapeutic relationship, patterns, choices, needs and desires come to light. The aim is a deeper understanding of the self, strengthened freedom of choice, and taking personal responsibility for a way of life that carries true meaning. The process does not seek a life without struggle, but the emergence of our inner resources, so we may meet challenges with fullness and awareness.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Efivos -->
+      <div class="svc reveal d2">
+        <div class="svc-top">
+          <div class="svc-badge">
+            <span class="ring"></span><span class="ring2"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.3L18 8.5l-3.4 3 1 4.5L12 13.8 8.4 16l1-4.5-3.4-3 4.3-1.2L12 3z"/></svg>
+          </div>
+          <span class="svc-num">02</span>
+        </div>
+        <h3><span data-el>Ψυχοθεραπεία Εφήβου</span><span data-en>Adolescent Psychotherapy</span></h3>
+        <p>
+          <span data-el>Στήριξη στους εφήβους μέσα στις ραγδαίες αλλαγές αυτής της φάσης — όταν διαμορφώνουν ταυτότητα και βιώνουν εσωτερικές συγκρούσεις, σύγχυση ή ανασφάλεια. Με σεβασμό στον δικό τους ρυθμό ανάπτυξης.</span>
+          <span data-en>Support for adolescents amid the rapid changes of this stage — as they shape an identity and meet inner conflict, confusion or insecurity. With respect for their own pace of growth.</span>
+        </p>
+        <div class="more" onclick="toggleSvc(this)"><span data-el>Περισσότερα</span><span data-en>Read more</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="svc-extra">
+          <p>
+            <span data-el>Εμφανίζονται προβληματισμοί γύρω από το σχολείο, τις σχέσεις, την οικογένεια, ζητήματα ταυτότητας και άγχος για το μέλλον. Η θεραπεία εφήβου στοχεύει στην ενδυνάμωση της εσωτερικής του φωνής και στη στήριξη της πορείας του, ώστε να τεθούν σταθερές βάσεις για τα επόμενα βήματα της ζωής του και μια ουσιαστική σύνδεση με τον εαυτό.</span>
+            <span data-en>Concerns arise around school, relationships, family, questions of identity and anxiety about the future. Adolescent therapy aims to strengthen their inner voice and support their path, laying steady foundations for the steps ahead and a meaningful connection with the self.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Zevgous -->
+      <div class="svc reveal d3">
+        <div class="svc-top">
+          <div class="svc-badge">
+            <span class="ring"></span><span class="ring2"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-6-4-8-7.5C2.6 9.5 4 6.5 6.8 6.5c1.9 0 3 1.3 5.2 3.4C14.2 7.8 15.3 6.5 17.2 6.5c2.8 0 4.2 3 2.8 6C18 16 12 20 12 20z"/></svg>
+          </div>
+          <span class="svc-num">03</span>
+        </div>
+        <h3><span data-el>Θεραπεία Ζεύγους</span><span data-en>Couples Therapy</span></h3>
+        <p>
+          <span data-el>Ένας χώρος για τους συντρόφους που, σε κρίσιμες περιόδους, ένιωσαν να χάνεται η αίσθηση της συντροφικότητας. Στόχος δεν είναι η απόδοση δικαιοσύνης, αλλά η ενίσχυση της κοντινότητας και της λειτουργικότητας.</span>
+          <span data-en>A space for partners who, in critical times, felt their sense of togetherness slipping. The goal is not to assign blame, but to strengthen closeness and the way the relationship works.</span>
+        </p>
+        <div class="more" onclick="toggleSvc(this)"><span data-el>Περισσότερα</span><span data-en>Read more</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="svc-extra">
+          <p>
+            <span data-el>Η ερωτική σχέση χαρακτηρίζεται από πολυπλοκότητα· δύο άνθρωποι με διαφορετικές καταβολές προσπαθούν να ταιριάξουν ενώ ταυτόχρονα εξελίσσονται και επαναπροσδιορίζουν ανάγκες και επιθυμίες. Η θεραπεία ζεύγους προσφέρει χώρο για να ακουστούν όλες οι φωνές — ώστε οι σύντροφοι να ξαναβρεθούν στο μοίρασμα της κοινής τους ζωής και να συνεχίσουν να εμπλουτίζονται ως ξεχωριστές προσωπικότητες.</span>
+            <span data-en>A loving relationship is inherently complex; two people with different roots try to fit together while evolving and redefining their needs and desires. Couples therapy offers space for every voice to be heard — so partners may rediscover each other in the sharing of a shared life, while continuing to flourish as distinct individuals.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Oikogeneiaki -->
+      <div class="svc reveal d4">
+        <div class="svc-top">
+          <div class="svc-badge">
+            <span class="ring"></span><span class="ring2"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="8.5" r="2.1"/><circle cx="17" cy="8.5" r="2.1"/><circle cx="12" cy="13.5" r="1.9"/><path d="M3.5 19c0-2.3 1.6-3.6 3.5-3.6M20.5 19c0-2.3-1.6-3.6-3.5-3.6M8.4 20.5c0-2.1 1.5-3.2 3.6-3.2s3.6 1.1 3.6 3.2"/></svg>
+          </div>
+          <span class="svc-num">04</span>
+        </div>
+        <h3><span data-el>Οικογενειακή Θεραπεία</span><span data-en>Family Therapy</span></h3>
+        <p>
+          <span data-el>Όταν η οικογένεια — ένας «ζωντανός οργανισμός» — έρχεται αντιμέτωπη με κρίσεις ή μεταβολές που αποσταθεροποιούν τις σχέσεις. Στόχος μας: όλα τα μέλη να ακουστούν και να βρουν μαζί νέους τρόπους συνύπαρξης.</span>
+          <span data-en>When the family — a “living organism” — meets crises or transitions that destabilise its relationships. Our aim: that every member is heard, and that together they find new ways of coexisting.</span>
+        </p>
+        <div class="more" onclick="toggleSvc(this)"><span data-el>Περισσότερα</span><span data-en>Read more</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="svc-extra">
+          <p>
+            <span data-el>Η οικογένεια αλλάζει, εξελίσσεται, δοκιμάζεται και μετασχηματίζεται μέσα στον χρόνο. Δεν είναι ασυνήθιστο να έρχεται αντιμέτωπη με γεγονότα που ανακόπτουν την πορεία της. Η διεργασία δεν αφορά την απόδοση ευθυνών, αλλά την ενδυνάμωση της ροής και της συνοχής των σχέσεων — ώστε το οικογενειακό σύστημα να γίνει συνολικά πιο λειτουργικό και να παραχθεί κάτι καλό για όλους.</span>
+            <span data-en>A family changes, evolves, is tested and transformed over time. It is not unusual for it to face events that interrupt its course. The process is not about assigning blame, but about strengthening the flow and cohesion of its relationships — so the family system becomes more functional overall and something good is created for everyone.</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- About -->
 <section class="about sec-pad" id="about">
   <div class="wrap about-grid">
     <div class="about-photo reveal-l">
-      <div class="stack">
+      <svg class="leafdec t" viewBox="0 0 24 24" fill="none"><path d="M12 2C7 7 4 11 4 16a8 8 0 0016 0c0-5-3-9-8-14z" fill="currentColor" opacity=".55"/></svg>
+      <svg class="leafdec b" viewBox="0 0 24 24" fill="none"><path d="M12 2C7 7 4 11 4 16a8 8 0 0016 0c0-5-3-9-8-14z" fill="currentColor" opacity=".55"/></svg>
+      <div class="portrait">
         <img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-104.jpg" alt="Ναταλία Άννα Γρυλωνάκη" class="zoomable">
-        <img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-98.jpg" alt="Ο χώρος" class="zoomable">
-        <img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-99.jpg" alt="Ο χώρος" class="zoomable">
       </div>
     </div>
     <div class="about-copy reveal-r">
@@ -477,90 +609,6 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   </div>
 </section>
 
-<!-- Services -->
-<section class="services sec-pad" id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker"><span data-el>Υπηρεσίες</span><span data-en>Services</span></span>
-      <h2>
-        <span data-el>Ένας χώρος συνάντησης <em>με τον εαυτό</em></span>
-        <span data-en>A place of meeting <em>with yourself</em></span>
-      </h2>
-    </div>
-    <div class="svc-grid">
-
-      <!-- Atomiki -->
-      <div class="svc reveal d1">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h3><span data-el>Ατομική Ψυχοθεραπεία</span><span data-en>Individual Psychotherapy</span></h3>
-        <p>
-          <span data-el>Στην πορεία της ζωής ανακύπτουν δυσκολίες, αποφάσεις και σημαντικές αλλαγές. Η ατομική ψυχοθεραπεία αποτελεί έναν χώρο συνάντησης με τον εαυτό — όπου η δυσκολία δεν αντιμετωπίζεται ως «πρόβλημα προς διόρθωση», αλλά ως μήνυμα που αξίζει να ακουστεί.</span>
-          <span data-en>Through life arise difficulties, decisions and significant change. Individual therapy is a space of meeting yourself — where the difficulty is not treated as a “problem to be fixed”, but as a message worth hearing.</span>
-        </p>
-        <div class="more" onclick="toggleSvc(this)"><span data-el>Διαβάστε περισσότερα</span><span data-en>Read more</span> →</div>
-        <div class="svc-extra">
-          <p>
-            <span data-el>Μέσα από τη θεραπευτική σχέση φωτίζονται μοτίβα, επιλογές, ανάγκες και επιθυμίες. Στόχος είναι η βαθύτερη κατανόηση του εαυτού, η ενίσχυση της ελεύθερης επιλογής και η ανάληψη της προσωπικής ευθύνης για τη δημιουργία ενός τρόπου ζωής που έχει αληθινό νόημα. Η διεργασία δεν αποσκοπεί σε μια ζωή χωρίς αγωνίες, αλλά στο να αναδειχθούν οι εσωτερικοί μας πόροι, ώστε να αντιμετωπίζουμε τις προκλήσεις με πληρότητα και επίγνωση.</span>
-            <span data-en>Through the therapeutic relationship, patterns, choices, needs and desires come to light. The aim is a deeper understanding of the self, strengthened freedom of choice, and taking personal responsibility for a way of life that carries true meaning. The process does not seek a life without struggle, but the emergence of our inner resources, so we may meet challenges with fullness and awareness.</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- Efivos -->
-      <div class="svc reveal d2">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4L12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 20h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h3><span data-el>Ψυχοθεραπεία Εφήβου</span><span data-en>Adolescent Psychotherapy</span></h3>
-        <p>
-          <span data-el>Η εφηβεία είναι μια φάση ραγδαίων αλλαγών. Το άτομο διαμορφώνει ταυτότητα, κάνει επιλογές και αναλαμβάνει ευθύνη για το πώς επιθυμεί να πορευτεί, βιώνοντας συχνά εσωτερικές συγκρούσεις, σύγχυση και ανασφάλειες.</span>
-          <span data-en>Adolescence is a phase of rapid change. The young person shapes an identity, makes choices and takes on responsibility for the path ahead, often experiencing inner conflict, confusion and insecurity.</span>
-        </p>
-        <div class="more" onclick="toggleSvc(this)"><span data-el>Διαβάστε περισσότερα</span><span data-en>Read more</span> →</div>
-        <div class="svc-extra">
-          <p>
-            <span data-el>Εμφανίζονται προβληματισμοί γύρω από το σχολείο, τις σχέσεις, την οικογένεια, ζητήματα ταυτότητας και άγχος για το μέλλον. Με σεβασμό στον προσωπικό ρυθμό ανάπτυξης κάθε εφήβου, η θεραπεία στοχεύει στην ενδυνάμωση της εσωτερικής του φωνής και στη στήριξη της πορείας του, ώστε να τεθούν σταθερές βάσεις για τα επόμενα βήματα της ζωής του.</span>
-            <span data-en>Concerns arise around school, friendships and relationships, family, questions of identity and anxiety about the future. With respect for each adolescent’s own pace, therapy aims to strengthen their inner voice and support their path, laying steady foundations for the steps ahead.</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- Zevgous -->
-      <div class="svc reveal d3">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20s-6.5-4.3-8.5-8.5C2 8 4 5 7 5c2 0 2.8 1.3 5 3.5C14.2 6.3 15 5 17 5c3 0 5 3 3.5 6.5C18.5 15.7 12 20 12 20z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-        <h3><span data-el>Θεραπεία Ζεύγους</span><span data-en>Couples Therapy</span></h3>
-        <p>
-          <span data-el>Στην κοινή ζωή ενός ζευγαριού είναι φυσικό να προκύπτουν προκλήσεις. Δύο άνθρωποι με διαφορετικές καταβολές προσπαθούν να ταιριάξουν ενώ ταυτόχρονα εξελίσσονται και επαναπροσδιορίζουν ανάγκες και επιθυμίες.</span>
-          <span data-en>In a couple’s shared life, challenges naturally arise. Two people with different roots try to fit together while, at the same time, evolving and redefining their needs and desires.</span>
-        </p>
-        <div class="more" onclick="toggleSvc(this)"><span data-el>Διαβάστε περισσότερα</span><span data-en>Read more</span> →</div>
-        <div class="svc-extra">
-          <p>
-            <span data-el>Σε κρίσιμες περιόδους, οι σύντροφοι μπορεί να εγκλωβιστούν σε αισθήματα αδικίας και να χάσουν την αίσθηση της συντροφικότητας. Η θεραπεία ζεύγους προσφέρει χώρο για να ακουστούν όλες οι φωνές. Στόχος δεν είναι η απόδοση δικαιοσύνης, αλλά η ενίσχυση της λειτουργικότητας και της κοντινότητας — να ξαναβρεθούν οι σύντροφοι στο μοίρασμα της κοινής τους ζωής.</span>
-            <span data-en>In critical times, partners may become trapped in feelings of injustice and lose the sense of togetherness that unites them. Couples therapy offers space for every voice to be heard. The goal is not to assign blame, but to strengthen the couple’s functioning and closeness — so partners may rediscover each other in the sharing of a shared life.</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- Oikogeneiaki -->
-      <div class="svc reveal d4">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="8" r="2.4" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="8" r="2.4" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="13" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 20c0-2.6 1.8-4 4-4M21 20c0-2.6-1.8-4-4-4M8 21c0-2.4 1.6-3.5 4-3.5s4 1.1 4 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <h3><span data-el>Οικογενειακή Θεραπεία</span><span data-en>Family Therapy</span></h3>
-        <p>
-          <span data-el>Για τη Συστημική προσέγγιση, η οικογένεια είναι ένας «ζωντανός οργανισμός» που αλλάζει, εξελίσσεται, επηρεάζει και επηρεάζεται από κάθε μέλος της, δοκιμάζεται και μετασχηματίζεται μέσα στον χρόνο.</span>
-          <span data-en>For the Systemic approach, the family is a “living organism” that changes, evolves, influences and is influenced by each of its members, is tested and transformed over time.</span>
-        </p>
-        <div class="more" onclick="toggleSvc(this)"><span data-el>Διαβάστε περισσότερα</span><span data-en>Read more</span> →</div>
-        <div class="svc-extra">
-          <p>
-            <span data-el>Δεν είναι ασυνήθιστο μια οικογένεια να έρχεται αντιμέτωπη με κρίσεις που αποσταθεροποιούν τις σχέσεις ή δυσκολίες που συνοδεύουν τις μεταβολές της. Στόχος μας είναι όλα τα μέλη να ακουστούν, να αναγνωρίσουν τα δυναμικά των σχέσεών τους και να αναζητήσουν μαζί νέους τρόπους συνύπαρξης — ώστε το οικογενειακό σύστημα να γίνει πιο λειτουργικό και να παραχθεί κάτι καλό για όλους.</span>
-            <span data-en>It is not unusual for a family to face crises that destabilise its relationships, or difficulties that accompany its changes. Our aim is for all members to be heard, to recognise the dynamics of their relationships and to seek together new ways of coexistence — so the family system becomes more functional and something good is created for everyone.</span>
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- Space / Gallery -->
 <section class="space sec-pad" id="space">
   <div class="wrap">
@@ -575,15 +623,16 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
       <span data-el>Το ιδιωτικό γραφείο στο Κολωνάκι είναι σχεδιασμένο ώστε να αναπνέει ηρεμία — ένας τόπος όπου ο χρόνος επιβραδύνει και η συζήτηση βρίσκει το χώρο της.</span>
       <span data-en>The private practice in Kolonaki is designed to breathe calm — a place where time slows down and conversation finds its space.</span>
     </p>
-    <div class="gallery">
-      <figure class="g-tall reveal-scale d1"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-100.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg viewBox="0 0 24 24" fill="none"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
-      <figure class="reveal-scale d2"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-97.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg viewBox="0 0 24 24" fill="none"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
-      <figure class="reveal-scale d3"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-101.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg viewBox="0 0 24 24" fill="none"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
-      <figure class="g-wide reveal-scale d2"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-105.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg viewBox="0 0 24 24" fill="none"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
-      <figure class="reveal-scale d3"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-103.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg viewBox="0 0 24 24" fill="none"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
-      <figure class="g-tall reveal-scale d1"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-98.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg viewBox="0 0 24 24" fill="none"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
-      <figure class="reveal-scale d2"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-99.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg viewBox="0 0 24 24" fill="none"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
-      <figure class="reveal-scale d3"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-106.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg viewBox="0 0 24 24" fill="none"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
+    <div class="gallery-port">
+      <figure class="reveal-scale d1"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-100.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
+      <figure class="reveal-scale d2"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-101.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
+      <figure class="reveal-scale d3"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-103.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
+      <figure class="reveal-scale d4"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-98.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
+    </div>
+    <div class="gallery-land">
+      <figure class="reveal-scale d1"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-105.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
+      <figure class="reveal-scale d2"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-106.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
+      <figure class="reveal-scale d3"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-97.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
     </div>
   </div>
 </section>
@@ -824,7 +873,7 @@ document.addEventListener('keydown',e=>{
 const heroImg=document.querySelector('.hero-bg img');
 window.addEventListener('scroll',()=>{
   const y=window.scrollY;
-  if(y<window.innerHeight&&heroImg){heroImg.style.transform=`scale(1.05) translateY(${y*0.18}px)`}
+  if(y<window.innerHeight&&heroImg){heroImg.style.transform=`scale(1.02) translateY(${y*0.18}px)`}
 },{passive:true});
 </script>
 </body>
