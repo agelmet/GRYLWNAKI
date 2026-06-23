@@ -101,9 +101,9 @@ header.scrolled .brand img{height:44px}
 /* ===== Hero ===== */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);filter:saturate(.9) brightness(.98)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);filter:blur(6px) saturate(0.8) brightness(0.85); /* Blurred, earthy forest background as requested */}
 .hero-bg::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(105deg,rgba(250,246,239,.92) 0%,rgba(250,246,239,.74) 36%,rgba(231,221,207,.4) 66%,rgba(143,168,136,.2) 100%)}
+  linear-gradient(105deg,rgba(250,246,239,.95) 0%,rgba(250,246,239,.8) 36%,rgba(231,221,207,.5) 66%,rgba(143,168,136,.3) 100%)}
 .hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:120px 32px 60px;width:100%}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;color:var(--clay-deep);font-weight:600;margin-bottom:26px}
 .hero-eyebrow::before{content:"";width:38px;height:1px;background:var(--clay)}
@@ -202,7 +202,7 @@ section{position:relative}
 .svc .more svg{width:15px;height:15px;transition:transform .4s}
 .svc .more.open svg{transform:rotate(90deg)}
 .svc-extra{max-height:0;overflow:hidden;transition:max-height .7s ease,margin-top .5s,opacity .6s;opacity:0}
-.svc-extra.open{max-height:700px;margin-top:18px;opacity:1}
+.svc-extra.open{max-height:1000px;margin-top:18px;opacity:1}
 .svc-extra p{font-size:.95rem;border-top:1px solid var(--line);padding-top:18px}
 .svc:hover .svc-extra p{border-color:rgba(255,255,255,.25)}
 
@@ -232,7 +232,7 @@ section{position:relative}
 .rev-score .stars svg{width:18px;height:18px;fill:var(--clay)}
 .rev-score .lbl{font-size:.8rem;color:var(--ink-soft);letter-spacing:.04em}
 .rev-track-wrap{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.rev-track{display:flex;gap:24px;width:max-content;animation:marquee 60s linear infinite}
+.rev-track{display:flex;gap:24px;width:max-content;animation:marquee 70s linear infinite}
 .rev-track-wrap:hover .rev-track{animation-play-state:paused}
 @keyframes marquee{to{transform:translateX(-50%)}}
 .rev-card{width:360px;flex-shrink:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column;gap:14px;transition:transform .4s,box-shadow .4s}
@@ -308,15 +308,14 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
 
 /* gallery sub-grids for symmetric, uncropped layout */
 .gallery-port{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.gallery-land{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.gallery-land{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:18px}
 
 /* ===== Responsive ===== */
 @media(max-width:980px){
   .intro-grid,.about-grid{grid-template-columns:1fr;gap:48px}
   .about-photo{order:-1;max-width:460px;margin:0 auto}
   .svc-grid{grid-template-columns:1fr}
-  .gallery-port{grid-template-columns:repeat(2,1fr)}
-  .gallery-land{grid-template-columns:1fr}
+  .gallery-port, .gallery-land{grid-template-columns:repeat(2,1fr)}
   .contact-grid{grid-template-columns:1fr}
   .intro-visual{max-width:460px;margin:0 auto}
 }
@@ -331,18 +330,17 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   .foot-grid{flex-direction:column}
   .leaf.l3{display:none}
   .svc{padding:38px 30px}
+  .gallery-port, .gallery-land{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- Loader -->
 <div id="loader">
   <div class="loader-mark"></div>
   <div class="loader-word">Αντίστιξη</div>
 </div>
 
-<!-- Header -->
 <header id="header">
   <nav class="nav">
     <a href="#top" class="brand">
@@ -375,7 +373,6 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   </nav>
 </header>
 
-<!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose" aria-label="Close">
     <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#3a322c" stroke-width="2" stroke-linecap="round"/></svg>
@@ -398,10 +395,9 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
 
 <span id="top"></span>
 
-<!-- Hero -->
 <section class="hero hero-anim">
   <div class="hero-bg">
-    <img src="https://github.com/agelmet/GRYLWNAKI/blob/main/Gemini_Generated_Image_t5eslit5eslit5es.png?raw=true" alt="">
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop" alt="Φύση σε γήινους τόνους">
   </div>
   <svg class="leaf l1" viewBox="0 0 24 24" fill="none"><path d="M12 2C7 7 4 11 4 16a8 8 0 0016 0c0-5-3-9-8-14z" fill="currentColor" opacity=".6"/><path d="M12 6v14" stroke="#fff" stroke-width=".6"/></svg>
   <svg class="leaf l2" viewBox="0 0 24 24" fill="none"><path d="M12 2C7 7 4 11 4 16a8 8 0 0016 0c0-5-3-9-8-14z" fill="currentColor" opacity=".6"/></svg>
@@ -413,8 +409,8 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
       <span data-en>Every person carries within them a <em>unique story</em>.</span>
     </h1>
     <p class="hero-lead fade-up">
-      <span data-el>Η ψυχοθεραπεία είναι ένας τόπος συνάντησης με τον εαυτό — ένας χώρος όπου τα συναισθήματα και οι σκέψεις μπορούν να ειπωθούν και να ακουστούν με προσοχή.</span>
-      <span data-en>Therapy is a place of meeting yourself — a space where feelings and thoughts can be spoken, and heard with care.</span>
+      <span data-el>Η ψυχοθεραπεία είναι ένας τόπος συνάντησης με τον εαυτό· ένας χώρος όπου τα συναισθήματα και οι σκέψεις μπορούν να ειπωθούν και να ακουστούν με προσοχή.</span>
+      <span data-en>Psychotherapy is a place of meeting oneself; a space where feelings and thoughts can be spoken and heard with care.</span>
     </p>
     <div class="hero-actions fade-up">
       <a href="#contact" class="btn btn-primary">
@@ -430,22 +426,21 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   </div>
 </section>
 
-<!-- Welcome / Intro -->
 <section class="intro sec-pad">
   <div class="wrap intro-grid">
     <div class="intro-copy reveal-l">
-      <span class="kicker"><span data-el>Καλώς ήρθατε</span><span data-en>Welcome</span></span>
+      <span class="kicker"><span data-el>Καλώς ήρθατε!</span><span data-en>Welcome!</span></span>
       <p class="lead-line">
-        <span data-el>«Μερικές φορές, η ιστορία μας περιλαμβάνει στιγμές δυσκολίας, ερωτήματα χωρίς εύκολες απαντήσεις ή συναισθήματα που δεν βρίσκουν τον χώρο να εκφραστούν.»</span>
-        <span data-en>“Sometimes our story holds moments of difficulty, questions without easy answers, or feelings that find no space to be expressed.”</span>
+        <span data-el>«Μερικές φορές, αυτή η ιστορία περιλαμβάνει στιγμές δυσκολίας, ερωτήματα χωρίς εύκολες απαντήσεις ή συναισθήματα που δεν βρίσκουν τον χώρο να εκφραστούν.»</span>
+        <span data-en>“Sometimes, this story involves moments of difficulty, questions without easy answers, or feelings that find no space to be expressed.”</span>
       </p>
       <p>
-        <span data-el>Στόχος μου είναι, μέσα σε ένα κλίμα εμπιστοσύνης και σεβασμού, να σταθούμε μαζί απέναντι σε αυτό που σας δυσκολεύει — το σύμπτωμα, το συναίσθημα ή τον προβληματισμό — να το κοιτάξουμε σε βάθος και να ανοίξουμε τον δρόμο προς κάτι πέρα από αυτό.</span>
-        <span data-en>My aim is that, within a climate of trust and respect, we stand together before whatever weighs on you — the symptom, the feeling, the question — looking deeply at it and opening a path toward something beyond it.</span>
+        <span data-el>Στόχος μου είναι, μέσα σε ένα κλίμα εμπιστοσύνης και σεβασμού, να σταθούμε μαζί απέναντι σε αυτό που σας δυσκολεύει, το σύμπτωμα, το συναίσθημα ή τον προβληματισμό· να το κοιτάξουμε σε βάθος και να ανοίξουμε τον δρόμο προς κάτι πέρα από αυτό.</span>
+        <span data-en>My aim is, within a climate of trust and respect, to stand together facing what troubles you—the symptom, the feeling, or the concern; to look at it deeply and pave the way for something beyond it.</span>
       </p>
       <p>
-        <span data-el>Έναν τόπο όπου μπορούν να αναδειχθούν οι δυνατότητές σας, να αναδυθούν νέες οπτικές και να δημιουργηθούν οι προϋποθέσεις για καλά προχωρήματα.</span>
-        <span data-en>A place where your capacities can come forward, new perspectives can emerge, and the conditions for meaningful progress can take shape.</span>
+        <span data-el>Σε έναν τόπο όπου μπορούν να αναδειχθούν οι δυνατότητές σας, να αναδυθούν νέες οπτικές και να δημιουργηθούν οι προϋποθέσεις για καλά προχωρήματα.</span>
+        <span data-en>In a place where your potential can be highlighted, new perspectives can emerge, and the conditions for positive progress can be created.</span>
       </p>
     </div>
     <div class="intro-visual reveal-r">
@@ -461,7 +456,6 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   </div>
 </section>
 
-<!-- Services (now before About) -->
 <section class="services sec-pad" id="services">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -473,7 +467,6 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
     </div>
     <div class="svc-grid">
 
-      <!-- Atomiki -->
       <div class="svc reveal d1">
         <div class="svc-top">
           <div class="svc-badge">
@@ -484,19 +477,22 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
         </div>
         <h3><span data-el>Ατομική Ψυχοθεραπεία</span><span data-en>Individual Psychotherapy</span></h3>
         <p>
-          <span data-el>Ένας χώρος συνάντησης με τον εαυτό, για ενήλικες που διαχειρίζονται άγχος, φόβο, αλλαγές ή ερωτήματα ζωής. Εδώ η δυσκολία δεν είναι «πρόβλημα προς διόρθωση», αλλά μήνυμα που αξίζει να ακουστεί.</span>
-          <span data-en>A space of meeting yourself — for adults navigating anxiety, fear, change or life’s deeper questions. Here, difficulty is not a “problem to be fixed”, but a message worth hearing.</span>
+          <span data-el>Στην πορεία της ζωής ενός προσώπου ανακύπτουν δυσκολίες που καλείται να αντιμετωπίσει, αποφάσεις που έχει να πάρει και σημαντικές αλλαγές που έχει να διαχειριστεί. Συχνά, αισθήματα όπως ο φόβος, το άγχος ή ο θυμός μας κατακλύζουν...</span>
+          <span data-en>In the course of a person's life, difficulties arise that one must face, decisions to make, and significant changes to manage. Often, feelings like fear, anxiety, or anger overwhelm us...</span>
         </p>
         <div class="more" onclick="toggleSvc(this)"><span data-el>Περισσότερα</span><span data-en>Read more</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="svc-extra">
           <p>
-            <span data-el>Μέσα από τη θεραπευτική σχέση φωτίζονται μοτίβα, επιλογές, ανάγκες και επιθυμίες. Στόχος είναι η βαθύτερη κατανόηση του εαυτού, η ενίσχυση της ελεύθερης επιλογής και η ανάληψη της προσωπικής ευθύνης για τη δημιουργία ενός τρόπου ζωής που έχει αληθινό νόημα. Η διεργασία δεν αποσκοπεί σε μια ζωή χωρίς αγωνίες, αλλά στο να αναδειχθούν οι εσωτερικοί μας πόροι, ώστε να αντιμετωπίζουμε τις προκλήσεις με πληρότητα και επίγνωση.</span>
-            <span data-en>Through the therapeutic relationship, patterns, choices, needs and desires come to light. The aim is a deeper understanding of the self, strengthened freedom of choice, and taking personal responsibility for a way of life that carries true meaning. The process does not seek a life without struggle, but the emergence of our inner resources, so we may meet challenges with fullness and awareness.</span>
+            <span data-el>...ενώ σκέψεις ματαιωτικές και η αίσθηση χαμηλής αυτοεκτίμησης μας ταλαιπωρούν. Μπορεί να βιώνουμε αγωνία ή προβληματισμούς για τις σχέσεις μας, ή να εμφανίζονται σωματικά και ψυχικά συμπτώματα που δυσκολεύουν την καθημερινότητά μας. Οι άνθρωποι καλούνται να διαχειριστούν τόσο εξωτερικούς παράγοντες με τους οποίους βρίσκονται σε αλληλεπίδραση, όσο και τον ίδιο τους τον εαυτό που μπορεί να βάζει εμπόδια στην προσωπική τους εξέλιξη και αρμονία ζωής.</span>
+            <span data-en>...while frustrating thoughts and a sense of low self-esteem torment us. We may experience distress or concerns about our relationships, or physical and mental symptoms may appear that make our daily lives difficult. People are called to manage both external interacting factors, as well as their own self, which can put obstacles to their personal growth and life harmony.</span>
+          </p>
+          <p>
+            <span data-el>Η ατομική ψυχοθεραπεία αποτελεί έναν χώρο συνάντησης με τον εαυτό. Στο πλαίσιο της Συστημικής – Υπαρξιακής προσέγγισης, η δυσκολία του προσώπου δεν αντιμετωπίζεται ως «πρόβλημα προς διόρθωση», αλλά ως μήνυμα που αξίζει να ακουστεί. Μέσα από τη θεραπευτική σχέση, δίνεται η δυνατότητα να φωτιστούν μοτίβα, επιλογές, ανάγκες και επιθυμίες. Στόχος είναι η βαθύτερη κατανόηση του εαυτού, η ενίσχυση της ελεύθερης επιλογής και η ανάληψη της προσωπικής ευθύνης για την δημιουργία ενός τρόπου ζωής που ανταποκρίνεται σε αυτό που έχει αληθινό νόημα για το άτομο. Η ψυχοθεραπευτική διεργασία δεν αποσκοπεί σε μια ζωή χωρίς αγωνίες ή δυσκολίες, που είναι φυσικές όσο ζούμε και εξελισσόμαστε αλλά, στο να αναδειχθούν οι εσωτερικοί μας πόροι και να καλλιεργηθούν τα εργαλεία αυτά που θα μας βοηθούν να αντιμετωπίζουμε τις προκλήσεις με πληρότητα και επίγνωση ώστε, μπορούμε να απολαμβάνουμε τη ζωή και τα βήματα μας σ αυτήν.</span>
+            <span data-en>Individual psychotherapy is a place of meeting the self. In the context of the Systemic – Existential approach, the person's difficulty is not treated as a "problem to be fixed", but as a message worth hearing. Through the therapeutic relationship, it becomes possible to highlight patterns, choices, needs and desires. The goal is a deeper understanding of the self, the reinforcement of free choice and taking personal responsibility for creating a lifestyle that responds to what has true meaning for the individual. The therapeutic process does not aim at a life without anxieties or difficulties, which are natural as long as we live and evolve, but at bringing out our internal resources and cultivating the tools that will help us face challenges with fullness and awareness, so we can enjoy life and our steps in it.</span>
           </p>
         </div>
       </div>
 
-      <!-- Efivos -->
       <div class="svc reveal d2">
         <div class="svc-top">
           <div class="svc-badge">
@@ -507,19 +503,22 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
         </div>
         <h3><span data-el>Ψυχοθεραπεία Εφήβου</span><span data-en>Adolescent Psychotherapy</span></h3>
         <p>
-          <span data-el>Στήριξη στους εφήβους μέσα στις ραγδαίες αλλαγές αυτής της φάσης — όταν διαμορφώνουν ταυτότητα και βιώνουν εσωτερικές συγκρούσεις, σύγχυση ή ανασφάλεια. Με σεβασμό στον δικό τους ρυθμό ανάπτυξης.</span>
-          <span data-en>Support for adolescents amid the rapid changes of this stage — as they shape an identity and meet inner conflict, confusion or insecurity. With respect for their own pace of growth.</span>
+          <span data-el>Η εφηβεία αποτελεί μια αναπτυξιακή φάση με ραγδαίες αλλαγές και εξελίξεις στη ζωή των ατόμων. Το άτομο καλείται να εγκαταλείψει την παιδική του φάση, να αλλάξει και να προετοιμαστεί για την ενήλικη ζωή...</span>
+          <span data-en>Adolescence is a developmental phase with rapid changes and evolutions in individuals' lives. The person is called upon to leave their childhood phase behind, to change and prepare for adulthood...</span>
         </p>
         <div class="more" onclick="toggleSvc(this)"><span data-el>Περισσότερα</span><span data-en>Read more</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="svc-extra">
           <p>
-            <span data-el>Εμφανίζονται προβληματισμοί γύρω από το σχολείο, τις σχέσεις, την οικογένεια, ζητήματα ταυτότητας και άγχος για το μέλλον. Η θεραπεία εφήβου στοχεύει στην ενδυνάμωση της εσωτερικής του φωνής και στη στήριξη της πορείας του, ώστε να τεθούν σταθερές βάσεις για τα επόμενα βήματα της ζωής του και μια ουσιαστική σύνδεση με τον εαυτό.</span>
-            <span data-en>Concerns arise around school, relationships, family, questions of identity and anxiety about the future. Adolescent therapy aims to strengthen their inner voice and support their path, laying steady foundations for the steps ahead and a meaningful connection with the self.</span>
+            <span data-el>...διαμορφώνοντας ταυτότητα, κάνοντας επιλογές και αναλαμβάνοντας ευθύνη για το πως επιθυμεί να πορευτεί. Συχνά, οι έφηβοι βιώνουν εσωτερικές συγκρούσεις, σύγχυση και ανασφάλειες μέσα σε αυτή τη μετάβαση. Εμφανίζονται προβληματισμοί που σχετίζονται με το σχολείο, τις φιλικές ή ερωτικές σχέσεις, την οικογένεια, ζητήματα σεξουαλικής ταυτότητας, καθώς και άγχος για το μέλλον.</span>
+            <span data-en>...forming an identity, making choices and taking responsibility for how they wish to proceed. Often, teenagers experience internal conflicts, confusion and insecurities in this transition. Concerns appear related to school, friendships or romantic relationships, family, issues of sexual identity, as well as anxiety about the future.</span>
+          </p>
+          <p>
+            <span data-el>Η ψυχοθεραπεία εφήβου, με σεβασμό στον προσωπικό ρυθμό ανάπτυξης του κάθε εφήβου, στοχεύει στην ενδυνάμωση της εσωτερικής του φωνής και στη στήριξη της προσωπικής του πορείας. Σκοπός είναι η αρμονική εξέλιξη και η ουσιαστική σύνδεση με τον εαυτό, ώστε να τεθούν σταθερές βάσεις για τα επόμενα βήματα της ζωής του.</span>
+            <span data-en>Adolescent psychotherapy, respecting the personal pace of development of each teenager, aims to strengthen their internal voice and support their personal journey. The purpose is harmonious development and a meaningful connection with oneself, in order to lay solid foundations for the next steps in life.</span>
           </p>
         </div>
       </div>
 
-      <!-- Zevgous -->
       <div class="svc reveal d3">
         <div class="svc-top">
           <div class="svc-badge">
@@ -530,19 +529,22 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
         </div>
         <h3><span data-el>Θεραπεία Ζεύγους</span><span data-en>Couples Therapy</span></h3>
         <p>
-          <span data-el>Ένας χώρος για τους συντρόφους που, σε κρίσιμες περιόδους, ένιωσαν να χάνεται η αίσθηση της συντροφικότητας. Στόχος δεν είναι η απόδοση δικαιοσύνης, αλλά η ενίσχυση της κοντινότητας και της λειτουργικότητας.</span>
-          <span data-en>A space for partners who, in critical times, felt their sense of togetherness slipping. The goal is not to assign blame, but to strengthen closeness and the way the relationship works.</span>
+          <span data-el>Στην κοινή ζωή ενός ζευγαριού, είναι φυσικό να προκύπτουν προκλήσεις που οι σύντροφοι καλούνται να αντιμετωπίσουν. Η ερωτική σχέση χαρακτηρίζεται από πολυπλοκότητα, καθώς δύο άνθρωποι με διαφορετικές καταβολές...</span>
+          <span data-en>In the shared life of a couple, it is natural for challenges to arise that partners are called upon to face. The romantic relationship is characterized by complexity, as two people with different backgrounds...</span>
         </p>
         <div class="more" onclick="toggleSvc(this)"><span data-el>Περισσότερα</span><span data-en>Read more</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="svc-extra">
           <p>
-            <span data-el>Η ερωτική σχέση χαρακτηρίζεται από πολυπλοκότητα· δύο άνθρωποι με διαφορετικές καταβολές προσπαθούν να ταιριάξουν ενώ ταυτόχρονα εξελίσσονται και επαναπροσδιορίζουν ανάγκες και επιθυμίες. Η θεραπεία ζεύγους προσφέρει χώρο για να ακουστούν όλες οι φωνές — ώστε οι σύντροφοι να ξαναβρεθούν στο μοίρασμα της κοινής τους ζωής και να συνεχίσουν να εμπλουτίζονται ως ξεχωριστές προσωπικότητες.</span>
-            <span data-en>A loving relationship is inherently complex; two people with different roots try to fit together while evolving and redefining their needs and desires. Couples therapy offers space for every voice to be heard — so partners may rediscover each other in the sharing of a shared life, while continuing to flourish as distinct individuals.</span>
+            <span data-el>...και βιώματα προσπαθούν να ταιριάξουν, ενώ ταυτόχρονα εξελίσσονται, αλλάζουν αναπτυξιακές φάσεις, επαναπροσδιορίζουν ανάγκες και επιθυμίες και ανταποκρίνονται στους πολλούς ρόλους της σύγχρονης ζωής. Σε κρίσιμες περιόδους, οι σύντροφοι μπορεί να εγκλωβιστούν σε αισθήματα αδικίας ή παρεξηγήσεις και να χάσουν την αίσθηση της συντροφικότητας που τους ενώνει.</span>
+            <span data-en>...and experiences try to fit together, while at the same time they evolve, change developmental phases, redefine needs and desires and respond to the many roles of modern life. In critical periods, partners can become trapped in feelings of injustice or misunderstandings and lose the sense of companionship that unites them.</span>
+          </p>
+          <p>
+            <span data-el>Η θεραπεία ζεύγους προσφέρει κατανόηση και χώρο για να ακουστούν όλες οι φωνές και τα συναισθήματα. Στόχος δεν είναι η απόδοση δικαιοσύνης, αλλά η ενίσχυση της λειτουργικότητας και της κοντινότητας του ζευγαριού. Μέσα από τη διαδικασία, οι σύντροφοι έχουν την ευκαιρία να ξαναβρεθούν στο μοίρασμα της κοινής τους ζωής, να αντιμετωπίσουν από κοινού τις δυσκολίες και παράλληλα να συνεχίσουν να εξελίσσονται και να εμπλουτίζονται ως ξεχωριστές προσωπικότητες.</span>
+            <span data-en>Couples therapy offers understanding and space for all voices and feelings to be heard. The goal is not the rendering of justice, but the strengthening of the couple's functionality and closeness. Through the process, partners have the opportunity to rediscover each other in the sharing of their common life, to jointly face difficulties, and at the same time to continue to evolve and be enriched as separate personalities.</span>
           </p>
         </div>
       </div>
 
-      <!-- Oikogeneiaki -->
       <div class="svc reveal d4">
         <div class="svc-top">
           <div class="svc-badge">
@@ -553,14 +555,18 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
         </div>
         <h3><span data-el>Οικογενειακή Θεραπεία</span><span data-en>Family Therapy</span></h3>
         <p>
-          <span data-el>Όταν η οικογένεια — ένας «ζωντανός οργανισμός» — έρχεται αντιμέτωπη με κρίσεις ή μεταβολές που αποσταθεροποιούν τις σχέσεις. Στόχος μας: όλα τα μέλη να ακουστούν και να βρουν μαζί νέους τρόπους συνύπαρξης.</span>
-          <span data-en>When the family — a “living organism” — meets crises or transitions that destabilise its relationships. Our aim: that every member is heard, and that together they find new ways of coexisting.</span>
+          <span data-el>Για τη Συστημική προσέγγιση, η οικογένεια είναι ένας «ζωντανός οργανισμός» που, όπως όλοι, αλλάζει, εξελίσσεται, επηρεάζει και επηρεάζεται από κάθε μέλος της, δοκιμάζεται και μετασχηματίζεται μέσα στον χρόνο.</span>
+          <span data-en>For the Systemic approach, the family is a "living organism" which, like all others, changes, evolves, influences and is influenced by each of its members, and is tested and transformed over time.</span>
         </p>
         <div class="more" onclick="toggleSvc(this)"><span data-el>Περισσότερα</span><span data-en>Read more</span> <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="svc-extra">
           <p>
-            <span data-el>Η οικογένεια αλλάζει, εξελίσσεται, δοκιμάζεται και μετασχηματίζεται μέσα στον χρόνο. Δεν είναι ασυνήθιστο να έρχεται αντιμέτωπη με γεγονότα που ανακόπτουν την πορεία της. Η διεργασία δεν αφορά την απόδοση ευθυνών, αλλά την ενδυνάμωση της ροής και της συνοχής των σχέσεων — ώστε το οικογενειακό σύστημα να γίνει συνολικά πιο λειτουργικό και να παραχθεί κάτι καλό για όλους.</span>
-            <span data-en>A family changes, evolves, is tested and transformed over time. It is not unusual for it to face events that interrupt its course. The process is not about assigning blame, but about strengthening the flow and cohesion of its relationships — so the family system becomes more functional overall and something good is created for everyone.</span>
+            <span data-el>Δεν είναι λοιπόν, ασυνήθιστο μια οικογένεια να έρχεται αντιμέτωπη με γεγονότα που ανακόπτουν την πορεία της, κρίσεις που αποσταθεροποιούν τις σχέσεις ή δυσκολίες που συνοδεύουν τις μεταβολές και την ανάπτυξη των μελών της. Στην οικογενειακή θεραπεία, στόχος μας είναι όλα τα μέλη να ακουστούν, να αναγνωρίσουν τα δυναμικά των σχέσεων τους και να αναζητήσουν μαζί νέους τρόπους συνύπαρξης και συνεργασίας.</span>
+            <span data-en>It is not unusual, then, for a family to face events that halt its course, crises that destabilize relationships, or difficulties accompanying the changes and growth of its members. In family therapy, our goal is for all members to be heard, to recognize the dynamics of their relationships, and to seek together new ways of coexistence and cooperation.</span>
+          </p>
+          <p>
+            <span data-el>Η διεργασία δεν αφορά την απόδοση ευθυνών, αλλά την ενδυνάμωση της ροής και της συνοχής των σχέσεων, με σκοπό να παραχθεί κάτι καλό για όλους και να καταστεί συνολικά το οικογενειακό σύστημα πιο λειτουργικό.</span>
+            <span data-en>The process is not about assigning blame, but empowering the flow and cohesion of relationships, aiming to produce something good for everyone and make the family system more functional overall.</span>
           </p>
         </div>
       </div>
@@ -569,7 +575,6 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   </div>
 </section>
 
-<!-- About -->
 <section class="about sec-pad" id="about">
   <div class="wrap about-grid">
     <div class="about-photo reveal-l">
@@ -580,36 +585,35 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
       </div>
     </div>
     <div class="about-copy reveal-r">
-      <span class="kicker"><span data-el>Ας συστηθούμε</span><span data-en>Let me introduce myself</span></span>
+      <span class="kicker"><span data-el>Ας συστηθούμε!</span><span data-en>Let me introduce myself!</span></span>
       <h3>Ναταλία Άννα Γρυλωνάκη</h3>
       <span class="about-credential"><span data-el>Ψυχολόγος · Ψυχοθεραπεύτρια — Άδεια 5224/2019</span><span data-en>Psychologist · Psychotherapist — Licence 5224/2019</span></span>
       <p>
-        <span data-el>Είμαι ψυχολόγος, κάτοχος άδειας ασκήσεως επαγγέλματος, καθώς και ψυχοθεραπεύτρια Συστημικής – Υπαρξιακής προσέγγισης. Σπούδασα Ψυχολογία στο Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών και συνέχισα την εξειδίκευσή μου παρακολουθώντας το εξαετές εκπαιδευτικό πρόγραμμα του Ινστιτούτου «Αντίστιξη».</span>
-        <span data-en>I am a licensed psychologist and a psychotherapist of the Systemic – Existential approach. I studied Psychology at the National and Kapodistrian University of Athens and continued my specialisation through the six-year training programme of the “Antistixi” Institute.</span>
+        <span data-el>Ονομάζομαι Ναταλία Άννα Γρυλωνάκη και είμαι ψυχολόγος, κάτοχος άδειας ασκήσεως επαγγέλματος (5224 / 2019), καθώς και ψυχοθεραπεύτρια Συστημικής – Υπαρξιακής προσέγγισης. Σπούδασα Ψυχολογία στο Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών και συνέχισα την εξειδίκευσή μου στη Συστημική – Υπαρξιακή προσέγγιση, παρακολουθώντας το εξαετές εκπαιδευτικό πρόγραμμα του εκπαιδευτικού και θεραπευτικού Ινστιτούτου «Αντίστιξη».</span>
+        <span data-en>My name is Natalia Anna Grylonaki and I am a licensed psychologist (license 5224 / 2019), as well as a psychotherapist of the Systemic - Existential approach. I studied Psychology at the National and Kapodistrian University of Athens and continued my specialization in the Systemic - Existential approach, attending the six-year training program of the educational and therapeutic Institute "Antistixi".</span>
       </p>
       <p>
         <span data-el>Το πρόγραμμα αυτό είναι αναγνωρισμένο από την Εθνική Εταιρεία Ψυχοθεραπείας Ελλάδος (ΕΕΨΕ), την Ελληνική Εταιρεία Συστημικής Θεραπείας (ΕΛΕΣΥΘ) και την European Family Therapy Association (EFTA).</span>
-        <span data-en>This programme is accredited by the Hellenic Association of Psychotherapy (HAP), the Hellenic Systemic Therapy Association and the European Family Therapy Association (EFTA).</span>
+        <span data-en>This program is recognized by the National Psychotherapy Association of Greece (EEBSE), the Hellenic Systemic Therapy Association (ELESYTH) and the European Family Therapy Association (EFTA).</span>
       </p>
       <p>
-        <span data-el>Πραγματοποίησα διετή μετεκπαιδευτική πρακτική στην Α΄ Πανεπιστημιακή Κλινική του Αιγινήτειου Νοσοκομείου, ενώ στη συνέχεια εργάστηκα στο Επιχειρησιακό Κέντρο κατά της Βίας και της Παιδικής Εκμετάλλευσης του οργανισμού «Χαμόγελο του Παιδιού», όπου γνώρισα από κοντά τη δύναμη της ελπίδας και της ανθεκτικότητας.</span>
-        <span data-en>I completed a two-year postgraduate placement at the 1st University Clinic of the Eginition Hospital, and later worked at the Operations Centre against Violence and Child Exploitation of “The Smile of the Child”, where I came to know closely the power of hope and resilience.</span>
+        <span data-el>Είχα την ευκαιρία να εργαστώ ως ψυχολόγος πραγματοποιώντας διετή μετεκπαιδευτική πρακτική στην Α΄ Πανεπιστημιακή Κλινική του Αιγινήτειου Νοσοκομείου, όπου κύριο μέλημά μας ήταν η ψυχική φροντίδα ανθρώπων που αντιμετώπιζαν ψυχικές δυσκολίες. Στη συνέχεια εργάστηκα στο Επιχειρησιακό Κέντρο κατά της Βίας και της Παιδικής Εκμετάλλευσης, του οργανισμού «Χαμόγελο του Παιδιού», όπου ήρθα σε επαφή με βαθιές ανθρώπινες δοκιμασίες και γνώρισα από κοντά τη δύναμη της ελπίδας, της ανθεκτικότητας και της επιθυμίας που υπερισχύει των δυσκολιών.</span>
+        <span data-en>I had the opportunity to work as a psychologist completing a two-year post-graduate practicum at the 1st University Clinic of Eginition Hospital, where our main concern was the mental care of people facing psychological difficulties. Following this, I worked at the Operations Center against Violence and Child Exploitation of the organization "The Smile of the Child", where I encountered deep human trials and closely witnessed the power of hope, resilience, and the desire that overcomes difficulties.</span>
       </p>
       <p>
-        <span data-el>Σήμερα ασκώ ιδιωτικά το επάγγελμα της ψυχολόγου – ψυχοθεραπεύτριας, με συνεδρίες δια ζώσης και διαδικτυακά — σε παιδιά, εφήβους, ενήλικες, ζευγάρια και οικογένειες.</span>
-        <span data-en>Today I practise privately as a psychologist–psychotherapist, offering sessions both in person and online — for children, adolescents, adults, couples and families.</span>
+        <span data-el>Τα τελευταία χρόνια εργάζομαι σε κέντρα ειδικών θεραπειών, παρέχοντας ψυχοθεραπευτικές συνεδρίες σε παιδιά και εφήβους, καθώς και συμβουλευτική γονέων, με στόχο την ολιστική προσέγγιση κάθε δυσκολίας. Παράλληλα, έχω συνεργαστεί με κέντρα ψυχοθεραπείας ενηλίκων, παρέχοντας ατομικές συνεδρίες ψυχοθεραπείας, θεραπεία ζεύγους, οικογενειακή θεραπεία και συντονίζοντας θεραπευτικές ομάδες. Σήμερα ασκώ ιδιωτικά το επάγγελμα της ψυχολόγου – ψυχοθεραπεύτριας, πραγματοποιώντας συνεδρίες τόσο δια ζώσης όσο και διαδικτυακά.</span>
+        <span data-en>In recent years I have been working in special therapy centers, providing psychotherapy sessions to children and adolescents, as well as parent counseling, aiming at a holistic approach to every difficulty. Concurrently, I have collaborated with adult psychotherapy centers, providing individual psychotherapy sessions, couples therapy, family therapy and coordinating therapeutic groups. Today I practice privately as a psychologist - psychotherapist, conducting sessions both in-person and online.</span>
       </p>
       <div class="approach">
         <p>
-          <span data-el>Βασικό μου μέλημα είναι η δημιουργία ενός ασφαλούς χώρου, όπου ο καθένας μπορεί να ανακαλύψει και να αξιοποιήσει τις δυνατότητες και τις επιθυμίες του, καλλιεργώντας έναν τρόπο ζωής σε αρμονία με τον εσωτερικό του πλούτο.</span>
-          <span data-en>My core aim is to create a safe space where each person can discover and draw on their capacities and desires, cultivating a way of living in harmony with their inner wealth.</span>
+          <span data-el>Η Συστημική – Υπαρξιακή Ψυχοθεραπεία συνδυάζει τη συστημική θεώρηση με την υπαρξιακή φιλοσοφία, βλέποντας τον άνθρωπο ολιστικά και πέρα από τα συμπτώματα. Βασικό μου μέλημα είναι η δημιουργία ενός ασφαλούς χώρου, όπου ο καθένας μπορεί να ανακαλύψει και να αξιοποιήσει τις δυνατότητες και τις επιθυμίες του, καλλιεργώντας έναν τρόπο ζωής σε αρμονία με τον εσωτερικό του πλούτο.</span>
+          <span data-en>Systemic - Existential Psychotherapy combines the systemic view with existential philosophy, looking at the person holistically and beyond their symptoms. My primary concern is creating a safe space where everyone can discover and utilize their potential and desires, cultivating a lifestyle in harmony with their inner wealth.</span>
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Space / Gallery -->
 <section class="space sec-pad" id="space">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -620,8 +624,8 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
       </h2>
     </div>
     <p class="space-lead reveal">
-      <span data-el>Το ιδιωτικό γραφείο στο Κολωνάκι είναι σχεδιασμένο ώστε να αναπνέει ηρεμία — ένας τόπος όπου ο χρόνος επιβραδύνει και η συζήτηση βρίσκει το χώρο της.</span>
-      <span data-en>The private practice in Kolonaki is designed to breathe calm — a place where time slows down and conversation finds its space.</span>
+      <span data-el>Το ιδιωτικό γραφείο είναι σχεδιασμένο ώστε να αναπνέει ηρεμία — ένας τόπος όπου ο χρόνος επιβραδύνει και η συζήτηση βρίσκει το χώρο της.</span>
+      <span data-en>The private practice is designed to breathe calm — a place where time slows down and conversation finds its space.</span>
     </p>
     <div class="gallery-port">
       <figure class="reveal-scale d1"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-100.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
@@ -633,11 +637,11 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
       <figure class="reveal-scale d1"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-105.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
       <figure class="reveal-scale d2"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-106.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
       <figure class="reveal-scale d3"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-97.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
+      <figure class="reveal-scale d4"><img src="https://raw.githubusercontent.com/agelmet/GRYLWNAKI/41f6587e361402c4a494978c2629182261a76fea/unnamed-99.jpg" alt="Ο χώρος" class="zoomable"><span class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff"><path d="M21 21l-5-5m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/></svg></span></figure>
     </div>
   </div>
 </section>
 
-<!-- Reviews -->
 <section class="reviews sec-pad" id="reviews">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -674,7 +678,6 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   </div>
 </section>
 
-<!-- Contact -->
 <section class="contact sec-pad" id="contact">
   <div class="wrap">
     <div class="sec-head reveal" style="text-align:center;margin:0 auto 60px">
@@ -702,7 +705,7 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
         </div>
         <div class="cinfo-item">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-          <div class="tx"><span data-el>Ώρες</span><span data-en>Hours</span><b><span data-el>Δευ–Παρ: 09:00 – 22:00</span><span data-en>Mon–Fri: 09:00 – 22:00</span></b></div>
+          <div class="tx"><span data-el>Ώρες</span><span data-en>Hours</span><b><span data-el>Δευ-Παρ: 09:00 π.μ – 22:00 μ.μ</span><span data-en>Mon-Fri: 09:00 am – 10:00 pm</span></b></div>
         </div>
         <a href="tel:+306977905979" class="btn btn-ghost" style="background:#fff;color:var(--clay-deep);margin-top:10px">
           <span data-el>Καλέστε τώρα</span><span data-en>Call now</span>
@@ -716,7 +719,6 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -743,7 +745,6 @@ footer{background:var(--ink);color:rgba(231,221,207,.66);padding:60px 0 30px}
   </div>
 </footer>
 
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <button class="lb-close" id="lbClose"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke-width="2" stroke-linecap="round"/></svg></button>
   <button class="lb-nav lb-prev" id="lbPrev"><svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -796,43 +797,43 @@ document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-scale').forEach(e
 
 /* ---------- Reviews data ---------- */
 const reviews=[
- {n:"Sofia",t:"Η κα Γρυλωνάκη είναι μια πολύ καταρτισμένη ψυχολόγος-ψυχοθεραπεύτρια και ένας άνθρωπος με σεβασμό και φροντίδα προς τη δουλειά της και τον κάθε άνθρωπο. Άμεση και εστιασμένη στις προσωπικές ανάγκες, δημιουργεί κλίμα εμπιστοσύνης, αποδοχής και ασφάλειας.",
+ {n:"Sofia",t:"Η κα Γρυλωνακη είναι μια πολύ καταρτισμένη Ψυχολογος-ψυχοθεραπεύτρια και ένας άνθρωπος με σεβασμό και φροντίδα προς την δουλειά της και τον κάθε άνθρωπο. Άμεση και εστιασμένη στις προσωπικές ανάγκες του κάθε προσώπου, δημιουργεί κλίμα εμπιστοσύνης, αποδοχής και ασφαλείας.",
    te:"Ms Grylonaki is a deeply qualified psychologist-psychotherapist and a person of respect and care toward her work and every individual. Direct and focused on each person’s needs, she creates a climate of trust, acceptance and safety."},
- {n:"Angeliki",t:"Της χρωστάω ευγνωμοσύνη για πάντα! Με βοήθησε με κατανόηση, γνώσεις και βαθιά ενσυναίσθηση σε ένα πολύ δύσκολο ζήτημα που προέκυψε. Την συστήνω ανεπιφύλακτα!",
+ {n:"Angeliki",t:"Της χρωστάω ευγνωμοσύνη για πάντα! Με βοήθησε με κατανόηση, γνώσεις και βαθιά ενσυναισθηση σε ένα πολύ δύσκολο ζήτημα που προέκυψε. Την συστήνω ανεπιφύλακτα!",
    te:"I owe her gratitude forever! She helped me with understanding, knowledge and deep empathy through a very difficult matter. I recommend her wholeheartedly!"},
- {n:"Βούλα",t:"Η κα Γρυλωνάκη μου ενέπνευσε από την πρώτη στιγμή εμπιστοσύνη και αμεσότητα. Δημιουργεί ένα κλίμα ασφάλειας, ενσυναίσθησης και αποδοχής μέσα στο οποίο η θεραπεία αποτελεί μεταμορφωτική εμπειρία προς την καλύτερη κατανόηση του εαυτού.",
+ {n:"Βούλα",t:"Η κα. Γρυλωνάκη μου ενέπνευσε από την πρώτη στιγμή εμπιστοσύνη και αμεσότητα. Δημιουργεί ένα κλίμα ασφάλειας, ενσυναίσθησης και αποδοχής μέσα στο οποίο η θεραπεία αποτελεί μεταμορφωτική εμπειρία προς την καλύτερη κατανόηση του εαυτού.",
    te:"Ms Grylonaki inspired trust and directness from the very first moment. She creates a climate of safety, empathy and acceptance, within which therapy becomes a transformative experience toward better self-understanding."},
- {n:"Λούση",t:"Η κα Γρυλωνάκη είναι εξαιρετική! Από την πρώτη συνεδρία διακρίνει κανείς την άρτια κατάρτιση και τον επαγγελματισμό της. Ο χώρος της προσεγμένος και ζεστός. Δημιουργεί ένα κλίμα φροντίδας και ασφάλειας με πραγματικό ενδιαφέρον για τον άνθρωπο.",
+ {n:"Λούση",t:"Η κα Γρυλώνακη είναι εξαιρετική! Από την πρώτη συνεδρία διακρίνει κανείς την άρτια κατάρτιση και τον επαγγελματισμό της. Ο χώρος της προσεγμένος και ζεστός. Δημιουργεί ένα κλίμα φροντίδας και ασφάλειας με πραγματικό ενδιαφέρον για τον άνθρωπο.",
    te:"Ms Grylonaki is exceptional! From the first session you sense her thorough training and professionalism. Her space is refined and warm. She creates a climate of care and safety with genuine interest in the person."},
- {n:"Eirini",t:"Επισκέφτηκα την κα Γρυλωνάκη σε μια πολύ δύσκολη στιγμή της ζωής μου, αρκετά επιφυλακτική για τη διαδικασία — και σήμερα καταλαβαίνω ότι είναι το καλύτερο δώρο που έχω κάνει στον εαυτό μου. Αγκάλιασε το πρόβλημά μου με ιδιαίτερη ενσυναίσθηση.",
-   te:"I visited Ms Grylonaki at a very hard time in my life, quite hesitant about the process — and today I understand it is the best gift I have given myself. She embraced my difficulty with remarkable empathy."},
- {n:"Ιωάννα",t:"Με βοήθησε πάρα πολύ με την αντιμετώπιση του στρες σε καθημερινό επίπεδο και κατανόησε τους προβληματισμούς μου. Ένιωσα ασφάλεια και ανακούφιση μετά από κάθε συνεδρία.",
+ {n:"Eirini",t:"Επισκέφτηκα την κα Γρυλωνάκη σε μια πολύ δύσκολη στιγμή της ζωής μου και όντας αρκετά επιφυλακτική για τη διαδικασία και σήμερα καταλαβαίνω ότι είναι το καλύτερο δώρο που έχω κάνει στον εαυτό μου…Η κα Γρυλωνάκη αγκάλιασε το πρόβλημα μου με ιδιαίτερη ενσυναίσθηση και με βοήθησε να γνωρίσω τον εαυτό μου και να μπορέσω να διαχειριστώ τις δυσκολίες μου.",
+   te:"I visited Ms Grylonaki at a very hard time in my life, quite hesitant about the process — and today I understand it is the best gift I have given myself. She embraced my difficulty with remarkable empathy and helped me know myself to manage my struggles."},
+ {n:"Ιωάννα",t:"Με βοήθησε πάρα πολύ με την αντιμετώπιση του στρες σε καθημερινό επίπεδο και κατανόησε τους προβληματισμούς μου. Ένιωσα ασφάλεια κ ανακούφιση μετά από κάθε συνεδρία.",
    te:"She helped me greatly in managing everyday stress and understood my concerns. I felt safe and relieved after every session."},
- {n:"Ελένη",t:"Απευθύνθηκα στην κα Γρυλωνάκη λόγω έντονων κρίσεων πανικού και άγχους. Την ευχαριστώ όχι μόνο γιατί κατάφερα σε μεγάλο βαθμό να τα ξεπεράσω, αλλά και γιατί κατάλαβα σε βάθος τι μου συνέβαινε.",
+ {n:"Ελένη",t:"Απευθύνθηκα στην κα Γρυλωνακη λόγω έντονων κρίσεων πανικού και άγχους . Την ευχαριστώ όχι μόνο γιατί κατάφερα σε μεγάλο βαθμό να τα ξεπεράσω αλλά και γιατί κατάλαβα σε βάθος τι μου συνέβαινε.",
    te:"I turned to Ms Grylonaki because of intense panic and anxiety. I thank her not only because I largely overcame them, but because I deeply understood what was happening to me."},
- {n:"Αντρέας",t:"Ευχαριστώ πολύ την κα Γρυλωνάκη καθώς με βοήθησε να προχωρήσω και να καταλάβω πολλά γύρω από το άγχος μου.",
+ {n:"Αντρεας",t:"Ευχαριστώ πολύ την κα Γρυλωνακη καθώς με βοήθησε να προχωρησω και να καταλάβω πολλά γύρω από το άγχος μου .",
    te:"Many thanks to Ms Grylonaki, as she helped me move forward and understand a lot about my anxiety."},
- {n:"Χριστίνα",t:"Ένιωσα πολύ άνετα στο ραντεβού μου. Η πρώτη μου εμπειρία με την ψυχοθεραπεία δεν θα μπορούσε να είναι καλύτερη! Μου ταίριαξε απόλυτα ο τρόπος που με αντιμετώπισε η ψυχολόγος.",
+ {n:"Χριστίνα",t:"Ένιωσα πολύ άνετα στο ραντεβού μου. Η πρώτη μου εμπειρία με την ψυχοθεραπεία δεν θα μπορούσε να είναι καλύτερη! Νομίζω μου ταίριαξε απόλυτα ο τρόπος που με αντιμετώπισε η ψυχολόγος !",
    te:"I felt very at ease in my appointment. My first experience with therapy could not have been better! The way the psychologist approached me suited me perfectly."},
- {n:"Δανάη",t:"Η Ναταλία είναι πολύ βοηθητική ψυχολόγος και δείχνει πολύ ενδιαφέρον για τον άνθρωπο που έχει απέναντί της. Με βοήθησε να νιώσω άνετα αμέσως και να διαχειριστώ δύσκολες καταστάσεις. Τη συστήνω ανεπιφύλακτα!",
+ {n:"Δανάη",t:"Η Ναταλία είναι πολύ βοηθητική ψυχολόγος και δείχνει πολύ ενδιαφέρον για τον άνθρωπο που έχει απέναντι της. Με βοήθησε να νιώσω άνετα αμέσως μαζί της και να διαχειριστώ δύσκολες καταστάσεις. Τη συστήνω ανεπιφύλακτα!",
    te:"Natalia is a very supportive psychologist who shows real interest in the person before her. She helped me feel at ease immediately and manage difficult situations. I recommend her wholeheartedly!"},
- {n:"Tσούτσου",t:"Εξαιρετική επαγγελματίας με εκπληκτική προσέγγιση, γεμάτη σεβασμό απέναντι στις ανάγκες του ανθρώπου. Η διάθεση για φροντίδα και η κατανόηση σε συνδυασμό με τις γνώσεις της σε κερδίζουν από τις πρώτες συναντήσεις.",
+ {n:"ΤΣΟΥΤΣΟΥ",t:"Εξαιρετική επαγγελματίας με εκπληκτική προσέγγιση και γεμάτη σεβασμό απέναντι στις ανάγκες του ανθρώπου που θα σταθεί απέναντι της. Η διάθεση για φροντίδα και η κατανόηση σε συνδυασμό με τις γνώσεις της σε κερδίζουν από τις πρώτες συναντήσεις.",
    te:"An outstanding professional with a remarkable approach, full of respect for the person’s needs. Her care and understanding, combined with her knowledge, win you over from the first meetings."},
- {n:"Βαγγελίτσα",t:"Εξαιρετική επαγγελματίας με ουσιαστική προσέγγιση και πραγματικό ενδιαφέρον. Από τις πρώτες κιόλας συνεδρίες ένιωσα μεγάλη διαφορά — τη συστήνω ανεπιφύλακτα.",
+ {n:"Βαγγεντινα",t:"Εξαιρετική επαγγελματίας με ουσιαστικη προσέγγιση και πραγματικό ενδιαφέρον .Από τις πρώτες κιολλας συνεδρίες ένιωσα μεγάλη διαφορά τη συστήνω ανεπιφύλακτα",
    te:"An excellent professional with a meaningful approach and genuine interest. From the very first sessions I felt a great difference — I recommend her wholeheartedly."},
- {n:"Maria",t:"Εξαιρετική εμπειρία! Αισθάνθηκα αμέσως ασφάλεια, εμπιστοσύνη και κατανόηση. Το περιβάλλον πολύ φιλόξενο!",
+ {n:"Maria",t:"Εξαιρετική εμπειρία!!Αισθάνθηκα αμέσως ασφάλεια,εμπιστοσύνη και κατανόηση! Το περιβάλλον πολύ φιλόξενο !!",
    te:"An exceptional experience! I immediately felt safety, trust and understanding. The environment is very welcoming!"},
  {n:"Λαέρτης",t:"Άκουσε προσεκτικά και κατανόησε σε βάθος αυτό που με απασχολούσε. Με βοήθησε να δω πιο καθαρά τον εαυτό μου και να διαχειριστώ όσα με δυσκόλευαν.",
    te:"She listened carefully and understood deeply what concerned me. She helped me see myself more clearly and manage what was weighing on me."},
  {n:"George",t:"Εξαιρετική επιστήμονας. Συστήνεται ανεπιφύλακτα.",
    te:"An excellent professional. Recommended wholeheartedly."},
- {n:"Κατερίνα",t:"Η εγγύτητα και ο επαγγελματισμός της κας Γρυλωνάκη με έκαναν να την εμπιστευτώ από την πρώτη κιόλας συνάντηση. Ενώ ήμουν επιφυλακτική λόγω κακής προηγούμενης εμπειρίας, επαναπροσδιόρισα τελείως την άποψή μου. Ο χώρος ζεστός και φιλόξενος!",
-   te:"Ms Grylonaki’s warmth and professionalism made me trust her from our very first meeting. Though I was hesitant after a poor previous experience, I completely revised my view. The space is warm and welcoming!"},
- {n:"Ευστρατία",t:"Ένας ζεστός και γλυκός άνθρωπος, με κατανόηση και αγάπη για τη δουλειά του, που παράλληλα σου προκαλεί βαθιά εμπιστοσύνη και ουσιαστική σιγουριά για τις γνώσεις της.",
+ {n:"Κατερίνα",t:"Η εγγύτητα και ο επαγγελματισμός της κ.Γρυλωνακη , με έκανε να την εμπιστευτώ απ την πρώτη κιόλας συνάντηση μας ! Αισθάνθηκα ασφάλεια και κατανόηση και ενώ ήμουν πολύ επιφυλακτική και δύσπιστη λόγω κακής προηγούμενης εμπειρίας με άλλη συνάδελφο , επαναπροσδιόρισα τελείως την άποψη μου και ένιωσα την ανάγκη να παραμείνω συνεπής σε κάθε ραντεβού μας ! Ο χώρος ζεστός και φιλόξενος !",
+   te:"Ms Grylonaki’s warmth and professionalism made me trust her from our very first meeting! Though I was hesitant after a poor previous experience, I completely revised my view. The space is warm and welcoming!"},
+ {n:"Ευστρατια",t:"Ένας ζεστός και γλυκός άνθρωπος, με κατανόηση και αγάπη για τη δουλειά του που παράλληλα σου προκαλεί βαθιά εμπιστοσύνη και ουσιαστική σιγουριά για τις γνώσεις της.",
    te:"A warm and gentle person, with understanding and love for her work, who at the same time inspires deep trust and real confidence in her knowledge."},
- {n:"Dimitris",t:"Η Ναταλία είναι μια εκπληκτική ψυχολόγος και τη συστήνω ανεπιφύλακτα. Η εμπιστοσύνη που μου ενέπνευσε και η επαγγελματική της προσέγγιση μού έδωσαν το έναυσμα που αναζητούσα για να αντιληφθώ τα οφέλη της ψυχοθεραπείας!",
+ {n:"Dimitris",t:"Η Ναταλια είναι μια εκπληκτική ψυχολόγος και τη συστήνω ανεπιφύλακτα.Η εμπιστοσύνη που μου ενέπνευσε και η επαγγελματική της προσέγγιση μου έδωσαν το έναυσμα που αναζητούσα για να αντιληφθώ τα ωφέλη της ψυχοθεραπείας!",
    te:"Natalia is an amazing psychologist and I recommend her wholeheartedly. The trust she inspired and her professional approach gave me the push I was looking for to grasp the benefits of therapy!"},
- {n:"Thelma",t:"Εξαιρετική επιστήμονας και άνθρωπος! Μου έδωσε από την αρχή τον χώρο και τον χρόνο που χρειαζόμουν ώστε να νιώσω άνετα και ασφαλής, καθώς ήταν η πρώτη φορά που έκανα ψυχοθεραπεία. Ευχαριστώ για όλα!",
+ {n:"Thelma",t:"Εξαιρετική επιστήμονας και άνθρωπος ! Με βοήθησε δινοντας μου από την αρχή το χώρο και τον χρόνο που χρειαζόμουν ωστε να νιώσω άνετα και ασφαλής καθώς ήταν η πρώτη φορά που έκανα ψυχοθεραπεία.Για εμένα η ψυχοθεραπεία υπήρξε ανέκαθεν μια μεγάλη πρόκληση η οποία μετατράπηκε σε ανάγκη . Ευχαριστώ για όλα!",
    te:"An excellent professional and person! From the start she gave me the space and time I needed to feel comfortable and safe, as it was my first time in therapy. Thank you for everything!"}
 ];
 function star(){return '<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9.2l-5 4.9 1.2 7L12 17.8 5.8 21l1.2-7-5-4.9 7.1-.9z"/></svg>'}
@@ -873,7 +874,7 @@ document.addEventListener('keydown',e=>{
 const heroImg=document.querySelector('.hero-bg img');
 window.addEventListener('scroll',()=>{
   const y=window.scrollY;
-  if(y<window.innerHeight&&heroImg){heroImg.style.transform=`scale(1.02) translateY(${y*0.18}px)`}
+  if(y<window.innerHeight&&heroImg){heroImg.style.transform=`scale(1.15) translateY(${y*0.18}px)`}
 },{passive:true});
 </script>
 </body>
