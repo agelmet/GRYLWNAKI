@@ -769,6 +769,20 @@ html:not([lang="en"]) .cinfo-item .tx b [data-el],html:not([lang="en"]) .cinfo-i
   .lightbox{padding:16px}
   .lightbox img{max-width:100%;max-height:78vh}
 }
+@media(max-width:760px){
+  /* phones: content is ready half a screen before it arrives, and settles fast — a quick swipe never lands on an empty screen */
+  html.js .reveal,html.js .reveal-l,html.js .reveal-r,html.js .reveal-scale,html.js .rv,html.js .svc.reveal{transition-duration:.45s,.55s}
+  html.js .reveal:not(.in),html.js .rv:not(.in),html.js .reveal-l:not(.in),html.js .reveal-r:not(.in){transform:translate3d(0,16px,0)}
+  html.js .fx-cas .fxl,html.js .fx-ctr .fxl{transition-delay:calc(var(--i)*12ms)}
+}
+@media (min-width:761px) and (max-height:820px){
+  /* small laptops (1366×657): the whole hero — name, line, buttons — fits on the first screen */
+  .hero-inner{padding:100px 32px 46px}
+  .hero .hero-title{font-size:clamp(2.4rem,min(6.2vw,10.4vh),5.2rem);margin-bottom:18px}
+  .hero-h1{margin-bottom:16px}
+  .hero-lead{margin-bottom:24px}
+  .hero-approach{margin-top:20px}
+}
 @media (max-height:700px) and (min-width:761px){.scroll-hint{display:none}}
 @media (prefers-reduced-motion:reduce){
   html.intro #intro{display:none}
@@ -1275,7 +1289,7 @@ if(!RM){
   const show=e=>e.classList.add('in');
   if(RM||document.hidden||!('IntersectionObserver' in window)){els.forEach(show);return}
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){show(e.target);io.unobserve(e.target)}}),
-    {rootMargin:MOB()?'0px 0px 14% 0px':'0px 0px -6% 0px',threshold:0});
+    {rootMargin:MOB()?'0px 0px 55% 0px':'0px 0px -6% 0px',threshold:0});
   els.forEach(e=>io.observe(e));
   /* a jump link (menu) lands past sections: show everything above the landing point at once */
   addEventListener('hashchange',()=>setTimeout(()=>els.forEach(e=>{if(e.getBoundingClientRect().top<innerHeight)show(e)}),60));
@@ -1434,7 +1448,7 @@ document.addEventListener('keydown',e=>{
   sf.forEach((f,i)=>f.style.setProperty('--o',Math.abs(i-mid)));
   const parts=[sec.querySelector('.sp-head'),sec.querySelector('.sp-tri'),sec.querySelector('.sp-strip')];
   if(document.hidden){parts.forEach(p=>p.classList.add('in'))}
-  else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:innerWidth<=760?'0px 0px 12% 0px':'0px 0px -8% 0px',threshold:0});
+  else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:innerWidth<=760?'0px 0px 45% 0px':'0px 0px -8% 0px',threshold:0});
     parts.forEach(p=>io.observe(p))}
   setTimeout(()=>parts.forEach(p=>p.classList.add('in')),6000); /* safety net */
   /* pause the light layer off-screen */
